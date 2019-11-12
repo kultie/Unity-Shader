@@ -4,6 +4,9 @@
     {
         [HideInInspector]
         _MainTex ("Texture", 2D) = "white" {}
+        _Radius ("Radius", Range(0,1600)) = 0
+        _Angle ("Angle", Range(-10,10)) = 0
+        _Offset ("Offset", Vector) = (0,0,0,0)
     }
     SubShader
     {
@@ -39,33 +42,42 @@
             }
 
             sampler2D _MainTex;
+            float _Radius;
+            float _Angle;
+            float2 _Offset;
 
-            float4 effect(sampler2D tex, float2 uv, float time){
-                float radius = _ScreenParams.x * 1.4;
-                float angle = sin(time);
-                float2 center = float2(_ScreenParams.x * 0.8, _ScreenParams.y) * 1.5;
+            float2 mapCoord(float2 coord){
+                coord *= _ScreenParams.xy;
+                coord += _ScreenParams.zw;
+                return coord;
+            }
 
-                float2 texSize = float2(_ScreenParams.x/0.6, _ScreenParams.y/0.5);
-                float2 tc = uv * texSize;
+            float2 unmapCoord(float2 coord){
+                coord -= _ScreenParams.zw;
+                coord /= _ScreenParams.xy;
+                return coord;
+            }
 
-                tc -= center;
-                float dist = length(tc * sin(time / 5.0));
-                if(dist < radius){
-                    float percent = (radius - dist) / radius;
-                    float theta = percent * percent * angle * 8.0;
-                    float s = sin(theta/2.);
-                    float c = cos(sin(theta/2.));
-                    tc = float2(dot(tc, float2(c, -s)), dot(tc, float2(s, c)));
+            float2 twist(float2 coord){
+                coord -= _Offset;
+                float dist = length(coord);
+                if(dist < _Radius){
+                    float ratioDist = (_Radius - dist)/ _Radius;
+                    float angleMod = ratioDist * ratioDist * _Angle;
+                    float s = sin(angleMod);
+                    float c = cos(angleMod);
+                    coord = float2 (coord.x * c - coord.y * s, coord.x * s + coord.y * c);
                 }
-                tc += center;
-                float3 color = tex2D(tex, (tc/texSize)).rgb;
-                return float4(color,1.0);
+                coord += _Offset;
+                return coord;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 uv = i.uv;
-                return effect(_MainTex,uv,_Time[1]);
+                float2 coord = mapCoord(i.uv);
+                coord = twist(coord);
+                coord = unmapCoord(coord);
+                return tex2D(_MainTex,coord);
             }
             ENDCG
         }

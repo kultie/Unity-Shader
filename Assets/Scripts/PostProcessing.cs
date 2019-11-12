@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PostProcessing : MonoBehaviour
 {
     public Material material;
 
-    private void Start()
+    private void Update()
     {
-        Camera cam = GetComponent<Camera>();
-        cam.depthTextureMode = cam.depthTextureMode | DepthTextureMode.Depth;
+       Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        material.SetVector("_MousePos", pos);
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
