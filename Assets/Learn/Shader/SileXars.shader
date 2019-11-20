@@ -2,7 +2,7 @@
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        [HideInInspector]_MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -60,6 +60,6 @@
                 return float4(wave_color, 1.0);
             }
             ENDCG
-        }
+        }       
     }
 }

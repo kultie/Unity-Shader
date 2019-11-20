@@ -7,12 +7,16 @@ public class PostProcessing : MonoBehaviour
 
     private void Update()
     {
-       Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        material.SetVector("_MousePos", pos);
+       //Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+       // material.SetVector("_MousePos", pos);
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        Graphics.Blit(source, destination,material);
+        //RenderTexture tmp = source;
+        //Graphics.Blit(source, tmp, material,0);
+        //Graphics.Blit(tmp, destination,material,1);
+        //RenderTexture.ReleaseTemporary(tmp);
+        Graphics.Blit(source, destination, material);
     }
 }

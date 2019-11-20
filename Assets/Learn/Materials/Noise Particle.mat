@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: a143c9744efcf4f53bd5d9211569aba7, type: 3}
+  m_Name: Noise Particle
+  m_Shader: {fileID: 4800000, guid: 071cc279cf2104e40aceb166826a50d3, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,7 +63,6 @@ Material:
     - _Amplitude: 0.366
     - _Angle: -3.01
     - _AnimationSpeed: 1
-    - _BumpAmt: 128
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -74,10 +73,16 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 1.16
     - _Mode: 0
+    - _NoiseAbs: 1
+    - _NoiseAmplitude: 10
+    - _NoiseFrequency: 0.01
+    - _NoiseSpeedX: 1
+    - _NoiseSpeedY: 1
+    - _NoiseSpeedZ: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Radius: 578
-    - _Size: 7.1
+    - _Size: 0.055
     - _Smoothness: 1.46
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -89,9 +94,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Blue: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.764151, g: 0.2991723, b: 0.2991723, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorA: {r: 0, g: 0, b: 0, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
+    - _ColourA: {r: 0.93021417, g: 1, b: 0, a: 0}
+    - _ColourB: {r: 1, g: 0, b: 0, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FilterClamp: {r: 20, g: 20, b: 20, a: 20}

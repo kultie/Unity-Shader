@@ -110,10 +110,10 @@
                 : 0.5 * sin(-13.0 * HALF_PI * ((2.0 * t - 1.0) + 1.0)) * pow(2.0, -10.0 * (2.0 * t - 1.0)) + 1.0;
             }
 
-            float box(in float2 _st, in float2 _size){
+            float box(in float2 _st, in float2 _size, in float scaleX){
                 _size = float2(0.5,.5) - _size*0.5;
-                float2 uv = smoothstep(_size,_size+float2(0.001,0.001),_st);
-                uv *= smoothstep(_size, _size+float2(0.001,0.001), float2(1.0,1.0)-_st);
+                float2 uv = smoothstep(_size,_size+float2(0.001 * scaleX,0.001),_st);
+                uv *= smoothstep(_size, _size+float2(0.001 * scaleX,0.001), float2(1.0,1.0)-_st);
                 return uv.x*uv.y;
             }
 
@@ -122,14 +122,11 @@
                 float2 st = IN.uv;
                 fixed3 color = fixed3(0,0,0);
 
-                fixed4 col = tex2D(_MainTex, st);
-                float2 translate = _MousePos - 0.5;
-                st -= translate;
+                float2 translate = float2(0, -bounceOut(abs(sin(_Time[1]))));
+                st += translate * 0.35;
 
-                // float box_ = box(st, 0.5);
-                fixed3 boxColor = fixed3(0,1,0) * tex2D(_CatTex,st*2 - 0.5).a;
-
-                return fixed4(boxColor + col, 1.0);
+                float b = box(st,0.05, bounceIn(abs(sin(_Time[1]))) * 20);
+                return fixed4(color + b, 1.0);
             }
             ENDCG
         }

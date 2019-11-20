@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PostProcessing
-  m_Shader: {fileID: 4800000, guid: d4a7635c4b7384c25b24de1a2aae378a, type: 3}
+  m_Shader: {fileID: 4800000, guid: c2a8a5624d5a8415bb8410f54f1b8407, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,6 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CatTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -57,7 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amplitude: 0.366
-    - _Angle: -1
+    - _Angle: 10
     - _AnimationSpeed: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -71,6 +75,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 1600
     - _Size: 1
     - _Smoothness: 1.46
     - _SmoothnessTextureChannel: 0
@@ -82,3 +87,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MousePos: {r: 0.18052322, g: 1.0571876, b: 0, a: 0}
+    - _Offset: {r: 352.5, g: 402.89, b: 0, a: 0}
