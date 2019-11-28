@@ -52,10 +52,10 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 ownCol = tex2D(_MainTex, i.uv);
-                fixed4 currentCol = fixed4(0,0,0,1);
+                fixed4 currentCol;
 
                 float maxAlpha = 0.0;
-                float2 displaced = float2(0,0);
+                float2 displaced;
 
                 float doublePI = PI * 2.0;
                 float angleStep = PI  * 2.0 / _Step;

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BattleTransitions
-  m_Shader: {fileID: 4800000, guid: fabca918ca89c6c42b211ec3299e2998, type: 3}
+  m_Shader: {fileID: 4800000, guid: 894414894cacd42dfb24ee2df8c141c7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -32,8 +32,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Amplitude: 30
+    - _Brightness: 1
+    - _CurrentTime: 72.795525
     - _Cutoff: 0.904
+    - _Distance: 20
     - _Distort: 0
     - _Fade: 1
+    - _InnerStrength: 20
+    - _OuterStrength: 3.8
+    - _Quality: 1
+    - _Radius: 2000
+    - _Speed: 800
+    - _StartWave: 1
+    - _Step: 1
+    - _Thickness: 0
+    - _WaveLength: 160
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.46226418, g: 1, b: 0.3915094, a: 1}
+    - _FilterClamp: {r: 1, g: 1, b: 1, a: 1}
+    - _Position: {r: 0.21488601, g: 0.46857473, b: 0, a: 0}

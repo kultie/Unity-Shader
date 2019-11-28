@@ -6,7 +6,7 @@
         [HideInInspector]_PrevFrame("Previous Frame", 2D) = "white" {}
         _InkBleedMap("Ink Bleed Map", 2D) = "white" {}
         _InkBleedMag("Ink Bleed Magnitude", Range(0,0.01)) = 0
-        _InkFadeMag("Ink Fade Magnitude", Range(0,.1)) = 0
+        _InkFadeMag("Ink Fade Magnitude", Range(0,.5)) = 0
     }
         SubShader
         {
