@@ -30,15 +30,12 @@ public class PostProcessing : MonoBehaviour
                 {
                     Graphics.Blit(source, tmp, material, i);
                 }
-                else if (i == passCount - 1)
-                {
-                    Graphics.Blit(tmp2, destination, material, i);
-                }
                 else
                 {
                     Graphics.Blit(tmp, tmp2, material, i);
                 }
             }
+            Graphics.Blit(tmp2, destination, material);
             //Graphics.Blit(source, tmp, material, 0);
             //Graphics.Blit(tmp, destination, material, 1);
             RenderTexture.ReleaseTemporary(tmp);
