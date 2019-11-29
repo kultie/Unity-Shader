@@ -24,18 +24,19 @@ public class PostProcessing : MonoBehaviour
         {
             RenderTexture tmp = RenderTexture.GetTemporary(source.width, source.height);
             RenderTexture tmp2 = RenderTexture.GetTemporary(source.width, source.height);
-            for (int i = 0; i < passCount; i++)
+            Graphics.Blit(source, tmp, material, 0);
+            if (passCount == 2)
             {
-                if (i == 0)
-                {
-                    Graphics.Blit(source, tmp, material, i);
-                }
-                else
+                Graphics.Blit(tmp, destination, material, 1);
+            }
+            else {
+                for (int i = 1; i < passCount-1; i++)
                 {
                     Graphics.Blit(tmp, tmp2, material, i);
+                    tmp = tmp2;
                 }
+                Graphics.Blit(tmp2, destination, material,passCount - 1);
             }
-            Graphics.Blit(tmp2, destination, material);
             //Graphics.Blit(source, tmp, material, 0);
             //Graphics.Blit(tmp, destination, material, 1);
             RenderTexture.ReleaseTemporary(tmp);

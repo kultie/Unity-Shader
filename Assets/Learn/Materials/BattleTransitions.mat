@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BattleTransitions
-  m_Shader: {fileID: 4800000, guid: 894414894cacd42dfb24ee2df8c141c7, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: f3d9f118670574a1c8daef300eda0d02, type: 3}
+  m_ShaderKeywords: GAUSS
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,6 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CatTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -33,22 +41,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amplitude: 30
+    - _Blur: 0
+    - _BlurSize: 0.04
     - _Brightness: 1
-    - _CurrentTime: 72.795525
+    - _BumpAmt: 42
+    - _CurrentTime: 166.96266
     - _Cutoff: 0.904
     - _Distance: 20
     - _Distort: 0
+    - _Distortion: -5
     - _Fade: 1
+    - _Gauss: 1
     - _InnerStrength: 20
     - _OuterStrength: 3.8
     - _Quality: 1
     - _Radius: 2000
+    - _Samplers: 100
+    - _Samples: 100
+    - _Size: 1.79
     - _Speed: 800
+    - _StandardDeviation: 0.007
     - _StartWave: 1
     - _Step: 1
+    - _T: 11.63
     - _Thickness: 0
+    - _VRadius: 1
+    - _VSoft: 1
     - _WaveLength: 160
     m_Colors:
-    - _Color: {r: 0.46226418, g: 1, b: 0.3915094, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FilterClamp: {r: 1, g: 1, b: 1, a: 1}
-    - _Position: {r: 0.21488601, g: 0.46857473, b: 0, a: 0}
+    - _MousePos: {r: 0, g: 0, b: 0, a: 1}
+    - _Position: {r: 0.5578853, g: 0.46103498, b: 0, a: 0}
