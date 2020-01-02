@@ -28,5 +28,6 @@ Simple Shader Learning Respo from [ShaderToy](https://www.shadertoy.com/)
 | fragCoord/iResolution  | i.uv or IN.uv_MainTex  |
 | iTime  | _Time.y or _Time[1] |
 | iMouse  | Add manually |
-|fragColor = color| return color|
-|iChannel<n> | Add manually |
+| fragColor = color| return color|
+| iChannel<n> | Add manually |
+| iResolution.xy | _ScreenParams.xy |
